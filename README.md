@@ -12,7 +12,7 @@ English | [简体中文](./README.zh-CN.md)
 
 ## Introduction
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is a production-ready front-end solution for admin interfaces. It based on [vue](https://github.com/vuejs/vue) and use the UI Toolkit [element-ui](https://github.com/ElemeFE/element).
+[Tvue] is a production-ready front-end solution for admin interfaces. It based on [vue](https://github.com/vuejs/vue) and use the UI Toolkit [element-ui](https://github.com/ElemeFE/element).
 
 It is a magical vue admin based on the newest development stack of vue, built-in i18n solution, typical templates for enterprise applications, lots of awesome features. It helps you build a large complex Single-Page Applications. I believe whatever your needs are, this project will help you.
 
@@ -136,10 +136,6 @@ npm run lint
 # code format check and auto fix
 npm run lint -- --fix
 ```
-
-## Online Demo
-
-[Preview](https://panjiachen.github.io/vue-element-admin)
 
 ## Browsers support
 

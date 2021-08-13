@@ -1,7 +1,7 @@
 <template>
   <div class="icons-container">
     <p class="warn-content">
-      <a href="https://jacobliu77.github.io/vue-element-admin-site/guide/advanced/icon.html" target="_blank">Add and use
+      <a href="https://jacobliu77.github.io/Tvue/guide/advanced/icon.html" target="_blank">Add and use
       </a>
     </p>
     <el-tabs type="border-card">
