@@ -11,10 +11,6 @@
         <div class="bullshit__oops">
           OOPS!
         </div>
-        <div class="bullshit__info">
-          版权所有
-          <a class="link-type" href="https://wallstreetcn.com" target="_blank">华尔街见闻</a>
-        </div>
         <div class="bullshit__headline">
           {{ message }}
         </div>
@@ -35,7 +31,7 @@ export default {
   name: 'Page404',
   computed: {
     message() {
-      return '网管说这个页面你不能进......'
+      return '网管说，这个页面你进不行......'
     }
   }
 }

@@ -52,7 +52,7 @@ export default {
     }
   },
   data() {
-    // To fix https://github.com/jacobliu77/vue-admin-template/issues/237
+    // To fix https://github.com/jacobliu77/Tvue
     // TODO: refactor with render function
     this.onlyOneChild = null
     return {}

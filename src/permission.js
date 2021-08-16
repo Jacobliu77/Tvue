@@ -3,7 +3,7 @@ import store from './store'
 import { Message } from 'element-ui'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
-import { getToken } from '@/utils/auth' // get token from cookie
+import { getToken ,getRoles ,getName, getAvatar,getIntroduction } from '@/utils/auth' // get token from cookie
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -16,6 +16,7 @@ router.beforeEach(async(to, from, next) => {
   // determine whether the user has logged in
   const hasToken = getToken()
   if (hasToken) {
+   
     if (to.path === '/login') {
       // if is logged in, redirect to the home page
       next({ path: '/' })
@@ -26,13 +27,26 @@ router.beforeEach(async(to, from, next) => {
       if (hasRoles) {
         next()
       } else {
-        const  roles  =  store.getters.roles
-        const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
-        router.addRoutes(accessRoutes)
-        next()
+        try {
+          // get user info vuex的getters是异步的所以在执行依赖逻辑时需要对相关的数据依赖强制同步
+          // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
+          const  roles  = await store.getters.roles
+          const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
+          router.addRoutes(accessRoutes)
+          // next()
+          // hack method to ensure that addRoutes is complete
+          // set the replace: true, so the navigation will not leave a history record
+          next({ ...to, replace: true })
+        } catch (error) {
+          // remove token and go to login page to re-login
+          Message.error(error || 'Has Error')
+          next(`/`)
+          NProgress.done()
+        }
+        //获取信息推进去
       }
     }
-  } 
+  }
 })
 
 router.afterEach(() => {
