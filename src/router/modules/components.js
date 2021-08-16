@@ -12,24 +12,7 @@ const componentsRouter = {
     icon: 'component'
   },
   children: [
-    {
-      path: 'tinymce',
-      component: () => import('@/views/components-demo/tinymce'),
-      name: 'TinymceDemo',
-      meta: { title: 'tinymce' }
-    },
-    {
-      path: 'markdown',
-      component: () => import('@/views/components-demo/markdown'),
-      name: 'MarkdownDemo',
-      meta: { title: 'markdown' }
-    },
-    {
-      path: 'dropzone',
-      component: () => import('@/views/components-demo/dropzone'),
-      name: 'DropzoneDemo',
-      meta: { title: 'dropzone' }
-    },
+  
     {
       path: 'sticky',
       component: () => import('@/views/components-demo/sticky'),
@@ -59,18 +42,6 @@ const componentsRouter = {
       component: () => import('@/views/components-demo/dragDialog'),
       name: 'DragDialogDemo',
       meta: { title: 'dragDialog' }
-    },
-    {
-      path: 'drag-select',
-      component: () => import('@/views/components-demo/dragSelect'),
-      name: 'DragSelectDemo',
-      meta: { title: 'dragSelect' }
-    },
-    {
-      path: 'dnd-list',
-      component: () => import('@/views/components-demo/dndList'),
-      name: 'DndListDemo',
-      meta: { title: 'dndList' }
     },
     {
       path: 'drag-kanban',
